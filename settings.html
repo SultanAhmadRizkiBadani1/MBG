@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MBG AI - Settings</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <div>
+
+            <h2>🍱 MBG AI</h2>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        📊 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="histori.html">
+                        📜 Histori
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="sidebar-footer">
+
+            <div class="ai-status">
+
+                <div class="ai-dot"></div>
+
+                <span>AI Active</span>
+
+            </div>
+
+            <small>
+                YOLOv8 + FastAPI
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <div class="main">
+
+        <!-- ================= NAVBAR ================= -->
+
+        <div class="navbar">
+
+            <div>
+
+                <h3>
+                    Settings
+                </h3>
+
+                <p>
+                    Pengaturan aplikasi MBG AI
+                </p>
+
+            </div>
+
+
+            <div class="nav-right">
+
+                <span class="badge">
+                    ⚙️ User Settings
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= PROFILE ================= -->
+
+        <section class="result-card">
+
+            <div class="section-title">
+
+                <h2>
+                    👤 Profil Pengguna
+                </h2>
+
+            </div>
+
+
+            <div class="profile-box">
+
+                <div class="profile-avatar">
+
+                    👨‍💻
+
+                </div>
+
+
+                <div class="profile-info">
+
+                    <label>
+                        Nama Pengguna
+                    </label>
+
+                    <input type="text" id="username" placeholder="Masukkan nama">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= APPEARANCE ================= -->
+
+        <section class="nutrition-card">
+
+            <div class="section-title">
+
+                <h2>
+                    🎨 Tampilan
+                </h2>
+
+            </div>
+
+
+            <div class="setting-item">
+
+                <div>
+
+                    <h4>
+                        Dark Mode
+                    </h4>
+
+                    <p>
+                        Aktifkan mode gelap
+                    </p>
+
+                </div>
+
+
+                <label class="switch">
+
+                    <input type="checkbox" id="darkModeToggle">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= NOTIFICATION ================= -->
+
+        <section class="nutrition-card">
+
+            <div class="section-title">
+
+                <h2>
+                    🔔 Notifikasi
+                </h2>
+
+            </div>
+
+
+            <div class="setting-item">
+
+                <div>
+
+                    <h4>
+                        Notifikasi AI
+                    </h4>
+
+                    <p>
+                        Menampilkan notifikasi hasil analisis
+                    </p>
+
+                </div>
+
+
+                <label class="switch">
+
+                    <input type="checkbox" id="notifToggle" checked>
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DATA ================= -->
+
+        <section class="nutrition-card">
+
+            <div class="section-title">
+
+                <h2>
+                    🗂 Data Management
+                </h2>
+
+            </div>
+
+
+            <div class="setting-item">
+
+                <div>
+
+                    <h4>
+                        Reset Histori
+                    </h4>
+
+                    <p>
+                        Menghapus seluruh histori analisis
+                    </p>
+
+                </div>
+
+
+                <button class="danger-btn" onclick="resetHistory()">
+
+                    🗑 Reset
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="about-mbg">
+
+            <h2>
+                📘 Tentang MBG AI
+            </h2>
+
+            <p>
+
+                MBG AI adalah sistem berbasis Artificial Intelligence
+                untuk mendeteksi makanan dan menganalisis kandungan nutrisi.
+
+            </p>
+
+            <p>
+
+                Sistem menggunakan model YOLOv8 untuk object detection
+                dan FastAPI sebagai backend server.
+
+            </p>
+
+            <p>
+
+                Website ini dibuat untuk membantu proses analisis
+                makanan pada program MBG agar lebih cepat dan efisien.
+
+            </p>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="footer">
+
+            <p>
+
+                © 2026 MBG AI —
+                Settings Dashboard
+
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <script src="js/settings.js"></script>
+
+</body>
+
+</html>

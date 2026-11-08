@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MBG AI - Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <div>
+
+            <h2>🍱 MBG AI</h2>
+
+            <ul>
+
+                <li class="active">
+                    <a href="index.html">
+                        📊 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="histori.html">
+                        📜 Histori
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="sidebar-footer">
+
+            <div class="ai-status">
+
+                <div class="ai-dot"></div>
+
+                <span>AI Active</span>
+
+            </div>
+
+            <small>
+                YOLOv8 + FastAPI
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <div class="main">
+
+        <!-- ================= NAVBAR ================= -->
+
+        <div class="navbar">
+
+            <div>
+
+                <h3>
+                    Dashboard MBG AI
+                </h3>
+
+                <p>
+                    Sistem Deteksi Makanan dan Analisis Gizi
+                </p>
+
+            </div>
+
+
+            <div class="nav-right">
+
+                <span class="badge">
+                    🚀 AI Online
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <h1>
+
+                    Deteksi Makanan &
+                    <span class="highlight">
+
+                        Analisis Gizi AI
+
+                    </span>
+
+                </h1>
+
+                <p>
+
+                    Upload gambar makanan dan sistem AI akan mendeteksi
+                    jenis makanan serta menganalisis kandungan nutrisi
+                    secara otomatis menggunakan model YOLOv8.
+
+                </p>
+
+
+                <div class="hero-btn">
+
+                    <button class="primary" onclick="scrollUpload()">
+
+                        🚀 Mulai Sekarang
+
+                    </button>
+
+
+                    <button class="secondary" onclick="scrollFeatures()">
+
+                        📘 Pelajari
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <div class="hero-card">
+
+                    <h3>
+                        ⚡ Realtime Detection
+                    </h3>
+
+                    <p>
+                        Deteksi makanan cepat dan akurat
+                    </p>
+
+                </div>
+
+
+                <div class="hero-card">
+
+                    <h3>
+                        🥗 Nutrition Analysis
+                    </h3>
+
+                    <p>
+                        Analisis nutrisi otomatis
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SUMMARY ================= -->
+
+        <section class="summary-cards">
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    🔥
+                </div>
+
+                <div>
+
+                    <h4>
+                        Total Kalori
+                    </h4>
+
+                    <h2 id="totalKalori">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    💪
+                </div>
+
+                <div>
+
+                    <h4>
+                        Protein
+                    </h4>
+
+                    <h2 id="totalProtein">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    🍚
+                </div>
+
+                <div>
+
+                    <h4>
+                        Karbohidrat
+                    </h4>
+
+                    <h2 id="totalKarbo">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <h4>
+                        Status Gizi
+                    </h4>
+
+                    <h2 id="statusGizi">
+                        -
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="about-mbg">
+
+            <h2>
+                📘 Tentang MBG AI
+            </h2>
+
+            <p>
+
+                MBG AI adalah sistem berbasis Artificial Intelligence
+                yang dirancang untuk membantu mendeteksi jenis makanan
+                serta menganalisis kandungan nutrisi secara otomatis.
+
+            </p>
+
+            <p>
+
+                Sistem ini menggunakan model YOLOv8 untuk melakukan
+                object detection terhadap makanan dan menghubungkannya
+                dengan database nutrisi sehingga dapat memberikan
+                informasi kalori, protein, karbohidrat, dan lemak.
+
+            </p>
+
+            <p>
+
+                Website ini ditujukan untuk membantu proses analisis
+                makanan pada program MBG (Makanan Bergizi Gratis)
+                agar lebih cepat, efisien, dan minim kesalahan.
+
+            </p>
+
+        </section>
+
+
+        <!-- ================= FEATURES ================= -->
+
+        <section class="features" id="featuresSection">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Deteksi Cepat
+                </h3>
+
+                <p>
+                    Kurang dari 2 detik menggunakan AI realtime.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Akurasi Tinggi
+                </h3>
+
+                <p>
+                    Menggunakan model YOLOv8 deep learning.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Analisis Nutrisi
+                </h3>
+
+                <p>
+                    Kalori, protein, karbo, dan lemak otomatis.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= UPLOAD ================= -->
+
+        <section class="upload-box" id="uploadSection">
+
+            <h2>
+                Upload Gambar Makanan
+            </h2>
+
+            <p>
+                Upload gambar makanan untuk dianalisis AI
+            </p>
+
+
+            <div class="drop-area" id="dropArea">
+
+                <div class="upload-icon">
+                    📤
+                </div>
+
+                <h3>
+                    Drag & Drop Gambar
+                </h3>
+
+                <small>
+                    PNG, JPG, JPEG
+                </small>
+
+                <input type="file" id="imageInput" hidden>
+
+            </div>
+
+
+            <img id="preview">
+
+
+            <button class="primary analyze-btn" onclick="analyze()">
+
+                🔍 Analisis Sekarang
+
+            </button>
+
+        </section>
+
+
+        <!-- ================= LOADING ================= -->
+
+        <div id="loading" class="loading hidden">
+
+            <div class="spinner"></div>
+
+            <p>
+                AI sedang menganalisis gambar...
+            </p>
+
+        </div>
+
+
+        <!-- ================= RESULT ================= -->
+        
+        <section class="result-card">
+        
+            <div class="section-title">
+        
+                <h2>🤖 Hasil Deteksi AI</h2>
+        
+            </div>
+        
+            <div id="resultContent">
+        
+                <div class="empty-state">
+        
+                    <h3>Belum Ada Hasil</h3>
+        
+                    <p>
+                        Upload gambar untuk memulai analisis AI.
+                    </p>
+        
+                </div>
+        
+            </div>
+        
+        </section>
+        
+        
+        <!-- ================= ANALISIS NUTRISI ================= -->
+        
+        <section class="nutrition-card">
+        
+            <div class="section-title">
+        
+                <h2>🥗 Analisis Nutrisi</h2>
+        
+                <p>
+                    Ringkasan kandungan nutrisi makanan yang terdeteksi AI
+                </p>
+        
+            </div>
+        
+            <div class="table-wrapper">
+        
+                <table>
+        
+                    <thead>
+        
+                        <tr>
+        
+                            <th>Nama</th>
+                            <th>Kalori</th>
+                            <th>Protein</th>
+                            <th>Karbohidrat</th>
+                            <th>Lemak</th>
+        
+                        </tr>
+        
+                    </thead>
+        
+                    <tbody id="nutritionTable">
+        
+                        <tr>
+        
+                            <td colspan="5">
+        
+                                Belum ada data nutrisi...
+        
+                            </td>
+        
+                        </tr>
+        
+                    </tbody>
+        
+                </table>
+        
+            </div>
+        
+        </section>
+        
+        
+        <!-- ================= STATUS GIZI MBG ================= -->
+        
+        <!-- ================= STATUS GIZI MBG ================= -->
+        
+        <section class="nutrition-card">
+        
+            <div class="section-title">
+        
+                <h2>🏆 Status Gizi MBG</h2>
+        
+                <p>
+                    Hasil evaluasi kualitas gizi berdasarkan standar MBG
+                </p>
+        
+            </div>
+        
+            <div class="table-wrapper">
+        
+                <table class="status-table">
+        
+                    <thead>
+        
+                        <tr>
+        
+                            <th>Status</th>
+                            <th>Kalori</th>
+                            <th>Protein</th>
+                            <th>Karbohidrat</th>
+                            <th>Lemak</th>
+        
+                        </tr>
+        
+                    </thead>
+        
+                    <tbody>
+        
+                        <tr>
+        
+                            <td id="statusBadge">
+                                Menunggu Analisis
+                            </td>
+        
+                            <td id="statusKalori">
+                                -
+                            </td>
+        
+                            <td id="statusProtein">
+                                -
+                            </td>
+        
+                            <td id="statusKarbo">
+                                -
+                            </td>
+        
+                            <td id="statusLemak">
+                                -
+                            </td>
+        
+                        </tr>
+        
+                    </tbody>
+        
+                </table>
+        
+            </div>
+        
+            <div class="table-wrapper" style="margin-top:20px;">
+        
+                <table>
+        
+                    <thead>
+        
+                        <tr>
+        
+                            <th>
+                                Alasan Penilaian
+                            </th>
+        
+                        </tr>
+        
+                    </thead>
+        
+                    <tbody id="statusReason">
+        
+                        <tr>
+        
+                            <td>
+                                Belum ada hasil analisis.
+                            </td>
+        
+                        </tr>
+        
+                    </tbody>
+        
+                </table>
+        
+            </div>
+        
+        </section>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

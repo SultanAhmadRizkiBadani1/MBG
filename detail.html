@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        MBG AI - Detail Laporan
+    </title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    
+    <script src="js/detail.js"></script>
+
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <div>
+
+            <h2>
+                🍱 MBG AI
+            </h2>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        📊 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="histori.html">
+                        📜 Histori
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="sidebar-footer">
+
+            <div class="ai-status">
+
+                <div class="ai-dot"></div>
+
+                <span>
+                    AI Active
+                </span>
+
+            </div>
+
+            <small>
+                YOLOv8 + FastAPI
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <div class="main">
+
+        <!-- ================= NAVBAR ================= -->
+
+        <div class="navbar">
+
+            <div>
+
+                <h3>
+                    📄 Detail Laporan
+                </h3>
+
+                <p>
+                    Detail hasil analisis makanan berdasarkan MBG
+                </p>
+
+            </div>
+
+            <div class="hero-btn">
+
+                <button class="secondary" onclick="window.location.href='histori.html'">
+
+                    ⬅ Kembali
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= SUMMARY ================= -->
+
+        <section class="summary-cards">
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    📅
+                </div>
+
+                <div>
+
+                    <h4>
+                        Tanggal
+                    </h4>
+
+                    <h2 id="laporanTanggal">
+                        -
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    🔥
+                </div>
+
+                <div>
+
+                    <h4>
+                        Total Kalori
+                    </h4>
+
+                    <h2 id="laporanKalori">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    🥩
+                </div>
+
+                <div>
+
+                    <h4>
+                        Protein
+                    </h4>
+
+                    <h2 id="laporanProtein">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    🏆
+                </div>
+
+                <div>
+
+                    <h4>
+                        Status
+                    </h4>
+
+                    <h2 id="laporanStatus">
+                        -
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MAKANAN ================= -->
+
+        <section class="nutrition-card">
+
+            <div class="section-title">
+
+                <h2>
+                    🍽 Detail Makanan
+                </h2>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Nama</th>
+                            <th>Kalori</th>
+                            <th>Protein</th>
+                            <th>Karbo</th>
+                            <th>Lemak</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="detailMakanan">
+
+                        <tr>
+
+                            <td colspan="5">
+
+                                Memuat data...
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STATUS MBG ================= -->
+
+        <section class="nutrition-card">
+
+            <div class="section-title">
+
+                <h2>
+                    🏆 Status Gizi MBG
+                </h2>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Status</th>
+                            <th>Kalori</th>
+                            <th>Protein</th>
+                            <th>Karbo</th>
+                            <th>Lemak</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td id="statusBadge">
+                                -
+                            </td>
+
+                            <td id="statusKalori">
+                                -
+                            </td>
+
+                            <td id="statusProtein">
+                                -
+                            </td>
+
+                            <td id="statusKarbo">
+                                -
+                            </td>
+
+                            <td id="statusLemak">
+                                -
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ALASAN ================= -->
+
+        <section class="nutrition-card">
+
+            <div class="section-title">
+
+                <h2>
+                    📋 Alasan Penilaian
+                </h2>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <tbody id="statusReason">
+
+                        <tr>
+
+                            <td>
+                                Belum ada data
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ACTION ================= -->
+
+        <section class="result-card">
+
+            <div class="section-title">
+
+                <h2>
+                    ⚙️ Aksi
+                </h2>
+
+            </div>
+
+            <div class="hero-btn">
+
+                <button class="primary" onclick="editLaporan()">
+
+                    ✏ Edit
+
+                </button>
+
+                <button class="secondary" onclick="hapusLaporan()">
+
+                    🗑 Hapus
+
+                </button>
+
+                <div class="export-dropdown">
+                
+                    <button class="primary" onclick="toggleExportMenu()">
+                
+                        📥 Export ▼
+                
+                    </button>
+                
+                    <div id="exportMenu" class="export-menu">
+                
+                        <button onclick="exportCSV()">
+                            📄 Export CSV
+                        </button>
+
+                        <button onclick="exportExcel()">
+                            📊 Export Excel
+                        </button>
+                
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="footer">
+
+            <p>
+
+                © 2026 MBG AI —
+                Detail Laporan Analisis Gizi
+
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="js/detail.js"></script>
+
+</body>
+
+</html>

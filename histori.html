@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MBG AI - Laporan Harian</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <div>
+
+            <h2>🍱 MBG AI</h2>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        📊 Dashboard
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="histori.html">
+                        📜 Histori
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="sidebar-footer">
+
+            <div class="ai-status">
+
+                <div class="ai-dot"></div>
+
+                <span>AI Active</span>
+
+            </div>
+
+            <small>
+                YOLOv8 + FastAPI
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN -->
+
+    <div class="main">
+
+        <!-- HEADER -->
+
+        <div class="navbar">
+
+            <div>
+
+                <h3>
+                    📅 Laporan Harian MBG
+                </h3>
+
+                <p>
+                    Ringkasan laporan hasil analisis makanan setiap hari
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUMMARY -->
+
+        <section class="summary-cards">
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    📅
+                </div>
+
+                <div>
+
+                    <h4>Total Laporan</h4>
+
+                    <h2 id="totalLaporan">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    🔥
+                </div>
+
+                <div>
+
+                    <h4>Total Kalori</h4>
+
+                    <h2 id="totalKalori">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    🟢
+                </div>
+
+                <div>
+
+                    <h4>Status Terakhir</h4>
+
+                    <h2 id="statusTerakhir">
+                        -
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEARCH -->
+
+        <section class="result-card">
+
+            <div class="section-title">
+
+                <h2>
+                    🔍 Cari Laporan
+                </h2>
+
+            </div>
+
+            <input type="text" id="searchInput" class="search-input" placeholder="Cari berdasarkan tanggal...">
+
+        </section>
+
+
+        <!-- DAFTAR LAPORAN -->
+
+        <section class="nutrition-card">
+
+            <div class="section-title">
+
+                <h2>
+                    📋 Daftar Laporan Harian
+                </h2>
+
+            </div>
+
+            <div id="dailyReports" class="report-grid">
+            
+            </div>
+            
+            <div id="emptyReport" class="empty-state">
+            
+                <h3>
+                    📋 Belum Ada Laporan
+                </h3>
+            
+                <p>
+                    Lakukan analisis makanan terlebih dahulu.
+                </p>
+            
+            </div>
+
+        </section>
+
+
+        <!-- MODAL DETAIL -->
+
+        <div id="detailModal" class="modal hidden">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h2>
+                        📄 Detail Laporan
+                    </h2>
+
+                    <button onclick="closeModal()">
+                        ✖
+                    </button>
+
+                </div>
+
+                <div id="detailContent">
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button class="primary" id="editBtn">
+                        ✏️ Edit
+                    </button>
+
+                    <button class="secondary" id="deleteBtn">
+                        🗑 Hapus
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            <p>
+                © 2026 MBG AI — Sistem Laporan Harian Analisis Gizi
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="js/histori.js"></script>
+
+</body>
+
+</html>
